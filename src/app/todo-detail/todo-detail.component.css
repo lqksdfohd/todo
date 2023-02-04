@@ -1,0 +1,16 @@
+div#container-todo-detail{
+    background-color: lightblue;
+    padding: 1rem;
+    display: flex;
+}
+div#detail{
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+}
+
+div#retour{
+    background-color: tomato;
+    margin-left: auto;
+    padding: 0.2rem 0.5rem;
+}

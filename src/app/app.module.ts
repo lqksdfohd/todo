@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 import { TodoService } from './services/todo-service';
 import { UneTodoComponent } from './une-todo/une-todo.component';
 import { ListCurrentTodosComponent } from './list-current-todos/list-current-todos.component';
+import { TodoDetailComponent } from './todo-detail/todo-detail.component';
+import { ResetService } from './services/reset-service';
 
 @NgModule({
   declarations: [
-    AppComponent,UneTodoComponent, ListCurrentTodosComponent
+    AppComponent,UneTodoComponent, ListCurrentTodosComponent, TodoDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [TodoService],
+  providers: [TodoService,ResetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
