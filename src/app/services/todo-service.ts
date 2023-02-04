@@ -5,22 +5,44 @@ import { TodoModel } from "../models/todo-model";
 
 @Injectable({"providedIn": "root"})
 export class TodoService{
-    listeTodo:TodoModel[];
-    listeTodoObs:Subject<TodoModel[]>;
+    listCurrentTodos:TodoModel[];
+    listCurrentTodosObs:Subject<TodoModel[]>;
+
+    listCrossedTodos:TodoModel[];
+    listCrossedTodosObs:Subject<TodoModel[]>
 
     constructor(){
-        this.listeTodoObs = new Subject();
-        this.listeTodo = [];
-        this.listeTodo.push(new TodoModel("ranger garage", "ranger le garage avant de partir"));
-        this.listeTodo.push(new TodoModel("les courses", "faire les courses"));
-        this.listeTodo.push(new TodoModel("livre", "rendre livre à la b.u"))
+        this.listCurrentTodosObs = new Subject();
+        this.listCrossedTodos = [];
+        this.listCrossedTodosObs = new Subject();
+        this.listCurrentTodos = [];
+        this.listCurrentTodos.push(new TodoModel("ranger garage", "ranger le garage avant de partir"));
+        this.listCurrentTodos.push(new TodoModel("les courses", "faire les courses"));
+        this.listCurrentTodos.push(new TodoModel("livre", "rendre livre à la b.u"))
     }
 
     getListeTodo():TodoModel[]{
-        return this.listeTodo;
+        return this.listCurrentTodos;
     }
 
-    ajouterObserveur(observeur:Observer<TodoModel[]>):void{
-        this.listeTodoObs.subscribe(observeur);
+    addObserverToCurrentList(observeur:Observer<TodoModel[]>):void{
+        this.listCurrentTodosObs.subscribe(observeur);
     }
+
+    addObserverToCrossedList(observer:Observer<TodoModel[]>):void{
+        this.listCrossedTodosObs.subscribe(observer);
+    }
+
+    crossATodo(todo:TodoModel):void{
+        if(todo.done == true){
+            return;
+        }
+        const newList = this.listCurrentTodos.filter(t => t.title != todo.title && t.description != todo.description);
+        todo.done = true;
+        this.listCurrentTodos = newList;
+        this.listCrossedTodos.push(todo);
+        this.listCurrentTodosObs.next(this.listCurrentTodos);
+        this.listCrossedTodosObs.next(this.listCrossedTodos);
+    }
+
 }

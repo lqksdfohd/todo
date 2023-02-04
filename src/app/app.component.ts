@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observer } from 'rxjs';
 import { TodoModel } from './models/todo-model';
 import { TodoService } from './services/todo-service';
 
@@ -9,12 +10,30 @@ import { TodoService } from './services/todo-service';
 })
 export class AppComponent implements OnInit {
 
-  listeTodo:TodoModel[];
+  currentTodoList: TodoModel[];
+  crossedTodoList: TodoModel[];
 
-  constructor(private todoService:TodoService){}
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
-      this.listeTodo = this.todoService.getListeTodo();
+    this.currentTodoList = this.todoService.getListeTodo();
+
+    const observerCurrentList:Observer<TodoModel[]> = {
+      next: (todoList) => {
+        this.currentTodoList = todoList;
+      },
+      error: (error) => {},
+      complete: () => {}
+    }
+
+    const observerCrossedTodoList:Observer<TodoModel[]> = {
+      next: (todoList) => {this.crossedTodoList = todoList},
+      error: (error) => {},
+      complete: () => {}
+    }
+
+    this.todoService.addObserverToCurrentList(observerCurrentList);
+    this.todoService.addObserverToCrossedList(observerCrossedTodoList);
   }
 
 

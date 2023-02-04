@@ -11,3 +11,7 @@ div#crossed-list{
     grid-row: 2/3;
 }
 
+hr{
+    margin: 2rem 0;
+}
+

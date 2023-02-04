@@ -16,5 +16,15 @@ div#une-todo-done{
     width: 2rem;
     margin-right: 2rem;
     margin-left: auto;
+}
+.not-done{
     background-color: lightgreen;
+}
+
+.done{
+    background-color: tomato;
+    
+}
+.crossed{
+    text-decoration: line-through;
 }
