@@ -1,0 +1,13 @@
+div#container-app{
+    display: grid;
+    grid-template-rows: 10fr 5fr ;
+}
+
+div#current-list{
+    grid-row: 1/2;
+}
+
+div#crossed-list{
+    grid-row: 2/3;
+}
+

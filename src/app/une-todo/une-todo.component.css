@@ -1,0 +1,20 @@
+div#container-une-todo{
+    display: flex;
+    border: solid 1px black;
+}
+
+div#une-todo{
+    display: flex;
+    flex: 1 1 15rem;
+    padding: 1rem 0 1rem 1rem;
+}
+span#title-une-todo{
+    font-weight: 700;
+}
+
+div#une-todo-done{
+    width: 2rem;
+    margin-right: 2rem;
+    margin-left: auto;
+    background-color: lightgreen;
+}
