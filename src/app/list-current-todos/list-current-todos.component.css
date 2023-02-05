@@ -2,8 +2,26 @@ div#container-list-todos{
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    position: relative;
 }
 
-div#one-todo{
+div#one-todo,div#ajouter-todo{
     flex: 0 1 17rem;
+}
+
+div#ajouter-todo{
+    display: flex;
+    flex: 0 1 16rem;
+    padding: 1rem 0 1rem 1rem;
+    font-weight: 700;
+    background-color: lightblue;
+}
+
+div#popup-creer-todo{
+    z-index: 9999;
+    position: absolute;
+    left: 30vw;
+    right: 30vw;
+    top: 30vh;
+    bottom: 30vh;
 }
