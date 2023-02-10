@@ -3,14 +3,11 @@
     <form id="form-creer-todo" [formGroup]="fg">
         <div id="titre">
             <label for="titre"> titre </label>
-            <input type="text" id="titre" formControlName="titre" required>
+            <input type="text" id="titre" formControlName="titre">
         </div>
         <div id="description">
             <label for="description"> description </label>
             <input type="text" id="description" formControlName = "description">
-        </div>
-        <div *ngIf='getTitreFC().touched && getTitreFC().invalid' id="invalid">
-            titre requis
         </div>
     </form>
     <div id="choix">
