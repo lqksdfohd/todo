@@ -59,9 +59,4 @@ export class TodoService{
         this.todoEnCoursObs.subscribe(observeur);
     }
 
-    creerUneTodo(todo:TodoModel){
-        this.listCurrentTodos.unshift(todo);
-        this.listCurrentTodosObs.next(this.listCurrentTodos);
-    }
-
 }

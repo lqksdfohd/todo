@@ -1,7 +1,5 @@
 div#container-app{
     display: grid;
-    height: calc(100vh - 16px);
-    width: calc(100vw - 16px);
     grid-template-rows: 5fr 10fr 5fr;
     grid-template-columns: 5fr 10fr 5fr;
 }

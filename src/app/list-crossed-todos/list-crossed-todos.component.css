@@ -1,9 +1,0 @@
-div#container-list-todos{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-div#one-todo{
-    flex: 0 1 17rem;
-}

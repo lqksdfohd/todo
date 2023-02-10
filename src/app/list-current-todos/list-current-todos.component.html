@@ -2,8 +2,4 @@
     <div id="one-todo" *ngFor="let todo of listeTodo" >
         <app-une-todo [todo]="todo"></app-une-todo>
     </div>
-    <div id="ajouter-todo" (click)="afficherCreerTodoPopup()">ajouter une todo</div>
-    <div *ngIf="affichageCreerTodo" id="popup-creer-todo">
-        <app-popup-creer-todo></app-popup-creer-todo>
-    </div>
 </div>
