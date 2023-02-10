@@ -11,16 +11,11 @@ export class TodoService{
     listCrossedTodos:TodoModel[];
     listCrossedTodosObs:Subject<TodoModel[]>
 
-    todoEnCours:TodoModel;
-    todoEnCoursObs: Subject<TodoModel>;
-
     constructor(){
         this.listCurrentTodosObs = new Subject();
         this.listCrossedTodos = [];
         this.listCrossedTodosObs = new Subject();
         this.listCurrentTodos = [];
-        this.todoEnCoursObs = new Subject();
-
         this.listCurrentTodos.push(new TodoModel("ranger garage", "ranger le garage avant de partir"));
         this.listCurrentTodos.push(new TodoModel("les courses", "faire les courses"));
         this.listCurrentTodos.push(new TodoModel("livre", "rendre livre à la b.u"))
@@ -48,15 +43,6 @@ export class TodoService{
         this.listCrossedTodos.push(todo);
         this.listCurrentTodosObs.next(this.listCurrentTodos);
         this.listCrossedTodosObs.next(this.listCrossedTodos);
-    }
-
-    setTodoEnCours(todo:TodoModel):void{
-        this.todoEnCours = todo;
-        this.todoEnCoursObs.next(todo);
-    }
-
-    ajouterObserveurATodoEnCours(observeur: Observer<TodoModel>){
-        this.todoEnCoursObs.subscribe(observeur);
     }
 
 }

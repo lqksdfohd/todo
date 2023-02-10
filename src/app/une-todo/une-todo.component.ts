@@ -21,8 +21,4 @@ export class UneTodoComponent implements OnInit {
     this.todoService.crossATodo(this.todo);
   }
 
-  selectionneTodo(){
-    this.todoService.setTodoEnCours(this.todo);
-  }
-
 }
