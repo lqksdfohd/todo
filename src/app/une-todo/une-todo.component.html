@@ -1,6 +1,6 @@
 <div id="container-une-todo">
     <div id="une-todo">
-        <span id="title-une-todo" [ngClass]="{crossed: todo.done}">{{todo.title}}</span>
+        <span id="title-une-todo" (click)="naviguerVersDetail()" [ngClass]="{crossed: todo.done}">{{todo.title}}</span>
         <div id="une-todo-done" class="not-done" [ngClass]="{done : todo.done}" (click)="crossThisTodo()"></div>
     </div>
 </div>

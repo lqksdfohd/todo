@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TodoModel } from '../models/todo-model';
 import { TodoService } from '../services/todo-service';
 
@@ -12,7 +13,7 @@ export class UneTodoComponent implements OnInit {
   @Input()
   todo:TodoModel;
   
-  constructor(private todoService:TodoService) { }
+  constructor(private todoService:TodoService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,4 +22,7 @@ export class UneTodoComponent implements OnInit {
     this.todoService.crossATodo(this.todo);
   }
 
+  naviguerVersDetail(){
+    this.router.navigate(['todo', this.todo.id]);
+  }
 }
