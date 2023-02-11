@@ -8,6 +8,7 @@ import { UneTodoComponent } from './une-todo/une-todo.component';
 import { ListCurrentTodosComponent } from './list-current-todos/list-current-todos.component';
 import { ToutesTodoComponent } from './toutes-todo/toutes-todo.component';
 import { DetailTodoComponent } from './detail-todo/detail-todo.component';
+import { IdService } from './services/id-service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { DetailTodoComponent } from './detail-todo/detail-todo.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [TodoService],
+  providers: [TodoService, IdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

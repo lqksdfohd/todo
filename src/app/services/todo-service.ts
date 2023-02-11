@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observer, Subject } from "rxjs";
 import { TodoModel } from "../models/todo-model";
+import { IdService } from "./id-service";
 
 
 @Injectable({"providedIn": "root"})
@@ -11,14 +12,14 @@ export class TodoService{
     listCrossedTodos:TodoModel[];
     listCrossedTodosObs:Subject<TodoModel[]>
 
-    constructor(){
+    constructor(private idService:IdService){
         this.listCurrentTodosObs = new Subject();
         this.listCrossedTodos = [];
         this.listCrossedTodosObs = new Subject();
         this.listCurrentTodos = [];
-        this.listCurrentTodos.push(new TodoModel("ranger garage", "ranger le garage avant de partir"));
-        this.listCurrentTodos.push(new TodoModel("les courses", "faire les courses"));
-        this.listCurrentTodos.push(new TodoModel("livre", "rendre livre à la b.u"))
+        this.listCurrentTodos.push(new TodoModel("ranger garage", "ranger le garage avant de partir", idService.getId()));
+        this.listCurrentTodos.push(new TodoModel("les courses", "faire les courses", idService.getId()));
+        this.listCurrentTodos.push(new TodoModel("livre", "rendre livre à la b.u", idService.getId()))
     }
 
     getListeTodo():TodoModel[]{
