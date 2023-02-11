@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { TodoService } from './services/todo-service';
 import { UneTodoComponent } from './une-todo/une-todo.component';
 import { ListCurrentTodosComponent } from './list-current-todos/list-current-todos.component';
+import { ToutesTodoComponent } from './toutes-todo/toutes-todo.component';
 
 @NgModule({
   declarations: [
-    AppComponent,UneTodoComponent, ListCurrentTodosComponent
+    AppComponent,UneTodoComponent, ListCurrentTodosComponent, ToutesTodoComponent
   ],
   imports: [
     BrowserModule,
