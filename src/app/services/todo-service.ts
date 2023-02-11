@@ -46,4 +46,14 @@ export class TodoService{
         this.listCrossedTodosObs.next(this.listCrossedTodos);
     }
 
+    getTodoParId(id:string){
+        const deTodoCurrent = this.listCurrentTodos.filter(todo => todo.id == id);
+        const deTodoCrossed = this.listCrossedTodos.filter(todo => todo.id == id);
+        if(deTodoCurrent.length > 0){
+            return deTodoCurrent[0];
+        }else{
+            return deTodoCrossed[0];
+        }
+    }
+
 }
