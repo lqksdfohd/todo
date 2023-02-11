@@ -1,0 +1,25 @@
+div#donnees, div#container-detail-todo{    
+    display: flex;
+    flex-direction: column;    
+}
+
+div#donnees{
+    background-color: lightblue;
+    justify-content: center;
+}
+
+div#titre{
+    background-color: #ade6ce;
+    width: 50%
+}
+
+div#titre, div#description{
+    padding: 0 0.5rem ;
+}
+
+div#retour{
+    margin-left: auto;
+    background-color: lightslategray;
+    padding: 0.3rem 0.6rem;
+    margin-top: 1rem;
+}
