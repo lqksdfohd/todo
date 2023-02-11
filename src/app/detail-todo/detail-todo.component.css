@@ -1,6 +1,7 @@
 div#donnees, div#container-detail-todo{    
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;  
+    width: 50vw;
 }
 
 div#donnees{
