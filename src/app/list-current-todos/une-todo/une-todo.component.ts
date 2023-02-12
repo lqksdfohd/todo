@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TodoModel } from '../models/todo-model';
-import { TodoService } from '../services/todo-service';
+import { TodoModel } from '../../models/todo-model';
+import { TodoService } from '../../services/todo-service';
 
 @Component({
   selector: 'app-une-todo',
