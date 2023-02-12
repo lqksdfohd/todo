@@ -1,3 +1,10 @@
 <div id="container-app">
+  <nav>
+    <ul>
+      <li class="item"><a [routerLink]="['/todo/listes']"> listes des todo </a></li>
+      <li class="item"><a [routerLink]="['/todo/creer']"> créer une todo </a></li>
+    </ul>
+  </nav>
+  <hr>
   <router-outlet></router-outlet>
 </div>
