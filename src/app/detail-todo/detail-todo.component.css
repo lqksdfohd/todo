@@ -2,6 +2,7 @@ div#donnees, div#container-detail-todo{
     display: flex;
     flex-direction: column;  
     width: 50vw;
+    border: solid black 1px;
 }
 
 div#donnees{
@@ -22,5 +23,4 @@ div#retour{
     margin-left: auto;
     background-color: lightslategray;
     padding: 0.3rem 0.6rem;
-    margin-top: 1rem;
 }
