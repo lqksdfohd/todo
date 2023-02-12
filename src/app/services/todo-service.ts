@@ -22,8 +22,11 @@ export class TodoService{
         this.listCurrentTodos.push(new TodoModel("livre", "rendre livre à la b.u", idService.getId()))
     }
 
-    getListeTodo():TodoModel[]{
+    getCurrentTodoListe():TodoModel[]{
         return this.listCurrentTodos;
+    }
+    getCrossedTodoListe(){
+        return this.listCrossedTodos;
     }
 
     addObserverToCurrentList(observeur:Observer<TodoModel[]>):void{

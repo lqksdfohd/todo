@@ -16,7 +16,8 @@ export class ToutesTodoComponent implements OnInit {
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
-    this.currentTodoList = this.todoService.getListeTodo();
+    this.currentTodoList = this.todoService.getCurrentTodoListe();
+    this.crossedTodoList = this.todoService.getCrossedTodoListe();
 
     const observerCurrentList:Observer<TodoModel[]> = {
       next: (todoList) => {
