@@ -1,1 +1,17 @@
-<p>creer-todo works!</p>
+<div id="creer-todo-container">
+    <h3> Créer une todo: </h3>
+    <form [formGroup]="fg">
+        <div class="unite-form">
+            <label for="titre"> titre de la todo </label>
+            <input id="titre" formControlName="titre">
+        </div>
+        <div *ngIf="formulaireNonValide()" id="invalid">titre requis</div>
+        <div class="unite-form">
+            <label for="description"> description de la todo </label>
+            <textarea id="description" formControlName="description"></textarea>
+        </div>
+        <div id="valider">
+            <button (click)="validerForm()">valider</button>
+        </div>
+    </form>
+</div>

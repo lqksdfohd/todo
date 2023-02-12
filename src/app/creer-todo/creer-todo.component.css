@@ -1,0 +1,36 @@
+
+div#creer-todo-container{
+    width: 50vw;
+    background-color: lightblue;
+}
+
+h3{
+    background-color: lightgreen;
+}
+
+div.unite-form{
+    display: flex;
+}
+
+div.unite-form label, div#invalid{
+    width: 10rem;
+}
+
+div.unite-form #titre, div.unite-form #description{
+    width: 15rem;
+    margin-top: 0.5rem;
+}
+
+div#invalid{
+    background-color: lightcoral;
+}
+
+div#valider{
+    display: flex;
+}
+
+div#valider button{
+    margin-left: auto;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}

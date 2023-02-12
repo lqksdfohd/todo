@@ -56,4 +56,9 @@ export class TodoService{
         }
     }
 
+    ajouterUneTodo(todo: TodoModel){
+        this.listCurrentTodos.unshift(todo);
+        this.listCurrentTodosObs.next(this.listCurrentTodos);
+    }
+
 }
